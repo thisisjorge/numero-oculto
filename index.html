@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo do Número Oculto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <!-- Tela de seleção de modo -->
+    <div id="mode-screen" class="game-screen">
+        <h1>Acerte o número secreto</h1>
+        <p class="subtitle">Escolha o modo de jogo</p>
+        
+        <div class="buttons-container">
+            <button id="random-mode-button" class="button">Número Aleatório</button>
+            <button id="two-player-mode-button" class="button">Dois Jogadores</button>
+        </div>
+    </div>
+    
+    <!-- Tela de configuração (Jogador 1) -->
+    <div id="setup-screen" class="game-screen hidden">
+        <h1>Acerte o número secreto</h1>
+        <p class="subtitle">Jogador 1: Escolha um número entre 1 e 100</p>
+        
+        <div class="input-container">
+            <input type="number" id="hiddenNumber" min="1" max="100" placeholder="Digite o número secreto" required>
+            <button id="setup-button" class="button">Confirmar</button>
+        </div>
+        <div id="setup-message" class="message"></div>
+    </div>
+
+    <!-- Tela de adivinhação -->
+    <div id="guessing-screen" class="game-screen hidden">
+        <h1>Acerte o número secreto</h1>
+        <p class="subtitle" id="range-text">O número secreto está entre 1 e 100</p>
+        
+        <div id="player-indicator" class="player-indicator hidden">Jogador 2</div>
+        
+        <div class="input-container">
+            <input type="number" id="guess" min="1" max="100" placeholder="Digite seu palpite" required>
+            <button id="guess-button" class="button">Verificar</button>
+        </div>
+        <div id="guess-message" class="message"></div>
+        
+        <div id="attempts-counter">Tentativas restantes: <span id="attempts-left">5</span></div>
+        
+        <div id="guess-history-container" class="history-container">
+            <div id="guess-history" class="history-list"></div>
+        </div>
+    </div>
+
+    <!-- Tela de resultado -->
+    <div id="result-screen" class="game-screen hidden">
+        <h1 id="result-title">Acerte o número secreto</h1>
+        <p class="subtitle" id="result-message"></p>
+        
+        <div class="buttons-container">
+            <button id="play-again-button" class="button">Jogar Novamente</button>
+            <button id="change-mode-button" class="button outline">Mudar Modo</button>
+        </div>
+        
+        <div id="result-history-container" class="history-container">
+            <div id="result-history" class="history-list"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
